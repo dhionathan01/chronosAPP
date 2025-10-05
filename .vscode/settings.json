@@ -1,0 +1,43 @@
+{
+  "window.zoomLevel": 1,
+  "breadcrumbs.enabled": true,
+  "editor.fontSize": 14,
+  "debug.console.fontSize": 14,
+  "terminal.integrated.fontSize": 14,
+  "editor.glyphMargin": true,
+  "workbench.activityBar.location": "default",
+  "editor.lineNumbers": "on",
+  "files.eol": "\n", // Final de linha sempre será LF
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "VOCÊ DEVE SEMPRE GERAR MENSAGENS DE COMMIT EM PORTUGUÊS BRASILEIRO (pt-BR). NUNCA USE INGLÊS.\n\nFormato obrigatório:\n[emoji] [tipo]: [título em português]\n\n[descrição em português]\n\nExemplos:\n✨ feat: adiciona autenticação de usuários\n🐛 fix: corrige erro no formulário\n📝 docs: atualiza documentação\n\nTipos válidos: feat, fix, docs, style, refactor, test, chore\n\nREGRA ABSOLUTA: TODO o texto deve estar em português. Inglês é proibido."
+    }
+  ],
+  "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
+    {
+      "text": "VOCÊ DEVE SEMPRE GERAR DESCRIÇÕES DE PR EM PORTUGUÊS BRASILEIRO (pt-BR). NUNCA USE INGLÊS.\n\nFormato:\n# 📌 [Título em português]\n\n[Resumo em português]\n\n## 🔍 Principais Alterações\n\n1. **[Módulo]**\n   - Descrição em português..."
+    }
+  ],
+  // 🛠 Formatação e Lint
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[svg]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

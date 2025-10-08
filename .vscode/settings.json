@@ -8,6 +8,13 @@
   "workbench.activityBar.location": "default",
   "editor.lineNumbers": "on",
   "files.eol": "\n", // Final de linha sempre será LF
+
+  // 🚫 Desabilitar todas as sugestões automáticas do Copilot
+  "github.copilot.editor.enableAutoCompletions": false,
+  "github.copilot.enable": {
+    "*": false
+  },
+
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
       "text": "VOCÊ DEVE SEMPRE GERAR MENSAGENS DE COMMIT EM PORTUGUÊS BRASILEIRO (pt-BR). NUNCA USE INGLÊS.\n\nFormato obrigatório:\n[emoji] [tipo]: [título em português]\n\n[descrição em português]\n\nExemplos:\n✨ feat: adiciona autenticação de usuários\n🐛 fix: corrige erro no formulário\n📝 docs: atualiza documentação\n\nTipos válidos: feat, fix, docs, style, refactor, test, chore\n\nREGRA ABSOLUTA: TODO o texto deve estar em português. Inglês é proibido."

@@ -4,7 +4,11 @@ import { Heading } from './components/Heading';
 export function App() {
   return (
     <>
-      <Heading attr={123} attr2={'String teste'}>
+      <Heading
+        attr={123}
+        attr2={'String teste'}
+        style={{ 'border-radius': '10px', padding: '10px' }}
+      >
         Dhionathan Jobim
       </Heading>
       <h1>Hello World</h1>

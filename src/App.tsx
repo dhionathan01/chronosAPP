@@ -1,10 +1,16 @@
 import './styles/theme.css';
 import './styles/global.css';
 import { Heading } from './components/Heading';
+import { TimerIcon } from 'lucide-react';
 export function App() {
   return (
     <>
-      <Heading>Dhionathan Jobim</Heading>
+      <Heading>
+        Dhionathan Jobim
+        <button>
+          <TimerIcon />
+        </button>
+      </Heading>
       <h1>Hello World</h1>
       <h1>Olá Mundo</h1>
       <p>Dhionathan Jobim</p>

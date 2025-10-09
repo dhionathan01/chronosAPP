@@ -1,14 +1,15 @@
 import './styles/theme.css';
 import './styles/global.css';
+import { Container } from './components/Container';
+import { TimerIcon } from 'lucide-react';
 
 export function App() {
   return (
     <>
-      <div className='container'>
-        <div className='content'>
-          <section>Logo</section>
-        </div>
-      </div>
+      <Container>
+        <section>Logo</section>
+      </Container>
+
       <div className='container'>
         <div className='content'>
           <section>Menu</section>

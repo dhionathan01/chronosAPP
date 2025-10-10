@@ -8,7 +8,8 @@
   "workbench.activityBar.location": "default",
   "editor.lineNumbers": "on",
   "files.eol": "\n", // Final de linha sempre será LF
-
+  "workbench.editor.labelFormat": "short",
+  "editor.tabSize": 2,
   // 🚫 Desabilitar todas as sugestões automáticas do Copilot
   "github.copilot.editor.enableAutoCompletions": false,
   "github.copilot.enable": {

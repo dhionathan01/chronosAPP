@@ -1,6 +1,7 @@
 import './styles/theme.css';
 import './styles/global.css';
 import { Container, Logo, Menu, Contador } from './components';
+import { DefaultInput } from './components/DefaultInput';
 
 export function App() {
   return (
@@ -19,8 +20,7 @@ export function App() {
       <Container>
         <form className='form' action=''>
           <div className='formRow'>
-            <label htmlFor='taskInput'>task</label>
-            <input id='taskInput' type='text' />
+            <DefaultInput id={'taskInput'} type='number' />
           </div>
           <div className='formRow'>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>

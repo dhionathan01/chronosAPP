@@ -1,6 +1,6 @@
-import { Container, Logo, Menu } from './components';
 import './styles/theme.css';
 import './styles/global.css';
+import { Container, Logo, Menu, Contador } from './components';
 
 export function App() {
   return (
@@ -12,11 +12,9 @@ export function App() {
       <Container>
         <Menu />
       </Container>
+
       <Container>
-        <section>Form</section>
-      </Container>
-      <Container>
-        <section>Footer</section>
+        <Contador />
       </Container>
     </>
   );

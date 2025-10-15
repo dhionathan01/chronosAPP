@@ -2,7 +2,7 @@
   max-width: auto;
 }
 .container {
-  width: 98rem;
+  max-width: 98rem;
   margin: 0 auto;
 }
 .content {

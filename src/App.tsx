@@ -22,15 +22,10 @@ export function App() {
           <div className='formRow'>
             <DefaultInput
               id={'taskInput'}
-              type='number'
+              type='text'
               labelText='Task'
+              placeholder='Digite o nome da task...'
               title='Input Text Title'
-              PropLabel={{
-                height: 30,
-                ['font-weight']: 'bold',
-                color: 'cyan',
-                ['background-color']: ' gray',
-              }}
             />
           </div>
           <div className='formRow'>

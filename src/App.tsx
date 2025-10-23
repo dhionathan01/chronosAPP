@@ -20,7 +20,18 @@ export function App() {
       <Container>
         <form className='form' action=''>
           <div className='formRow'>
-            <DefaultInput id={'taskInput'} type='number' />
+            <DefaultInput
+              id={'taskInput'}
+              type='number'
+              labelText='Task'
+              title='Input Text Title'
+              PropLabel={{
+                height: 30,
+                ['font-weight']: 'bold',
+                color: 'cyan',
+                ['background-color']: ' gray',
+              }}
+            />
           </div>
           <div className='formRow'>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>

@@ -1,6 +1,6 @@
 import './styles/theme.css';
 import './styles/global.css';
-import { Container, Logo, Menu, Contador } from './components';
+import { Container, Logo, Menu, Contador, Cycles } from './components';
 import { DefaultInput } from './components/DefaultInput';
 
 export function App() {
@@ -32,8 +32,7 @@ export function App() {
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <div className='formRow'>
-            <p>Ciclos</p>
-            <p>0 0 0 0 0 0</p>
+            <Cycles />
           </div>
           <div className='formRow'>
             <button>Enviar</button>

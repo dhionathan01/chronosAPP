@@ -4,5 +4,6 @@ import { Logo } from './Logo';
 import { Menu } from './Menu';
 import { Contador } from './Contador';
 import { Cycles } from './Cycles';
+import { Footer } from './Footer';
 
-export { Container, Heading, Logo, Menu, Contador, Cycles };
+export { Container, Heading, Logo, Menu, Contador, Cycles, Footer };

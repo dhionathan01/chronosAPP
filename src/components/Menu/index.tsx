@@ -1,9 +1,19 @@
-import { HistoryIcon, HouseIcon, SettingsIcon, SunIcon } from 'lucide-react';
+import {
+  HistoryIcon,
+  HouseIcon,
+  MoonIcon,
+  SettingsIcon,
+  SunIcon,
+} from 'lucide-react';
 import styles from './styles.module.css';
 import { useEffect, useState } from 'react';
 
 type AvaibledThemes = 'dark' | 'light';
 
+const themeIcon = {
+  dark: <SunIcon />,
+  light: <MoonIcon />,
+};
 export function Menu() {
   const [theme, setTheme] = useState<AvaibledThemes>(() => {
     const themeSelected =
@@ -54,7 +64,7 @@ export function Menu() {
         title='Alterar o tema'
         onClick={event => handleChangeTheme(event)}
       >
-        <SunIcon />
+        {themeIcon[theme]}
       </a>
     </nav>
   );

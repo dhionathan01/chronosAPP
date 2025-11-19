@@ -5,7 +5,11 @@ import { useEffect, useState } from 'react';
 type AvaibledThemes = 'dark' | 'light';
 
 export function Menu() {
-  const [theme, setTheme] = useState<AvaibledThemes>('dark');
+  const [theme, setTheme] = useState<AvaibledThemes>(() => {
+    const themeSelected =
+      (localStorage.getItem('theme') as AvaibledThemes) || 'dark';
+    return themeSelected;
+  });
   function handleChangeTheme(
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
   ) {
@@ -14,6 +18,7 @@ export function Menu() {
   }
 
   useEffect(() => {
+    localStorage.setItem('theme', theme);
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
   return (

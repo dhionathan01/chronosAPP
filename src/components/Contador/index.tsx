@@ -1,9 +1,20 @@
+import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
 import styles from './styles.module.css';
-import { useTaskContext } from '../../contexts/TaskContext';
 export function Contador() {
-  const taskContext = useTaskContext();
-  console.log(taskContext);
-  console.log(taskContext.state);
-  console.log('Contador');
-  return <div className={styles.container}>00:00</div>;
+  const { state, setState } = useTaskContext();
+  function handleClickAlterTime() {
+    setState(prevState => {
+      return {
+        ...prevState,
+        formattedSecondsRemaining: '21:00',
+      };
+    });
+  }
+
+  return (
+    <div>
+      <button onClick={handleClickAlterTime}>click</button>
+      <div className={styles.container}>{state.formattedSecondsRemaining}</div>
+    </div>
+  );
 }

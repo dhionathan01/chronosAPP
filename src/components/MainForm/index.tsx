@@ -21,7 +21,7 @@ export function MainForm() {
     if (!taskNameInput.current) return;
     const taskName = taskNameInput.current.value.trim();
     if (!taskName) {
-      console.log('entri no !taskname');
+      alert('Tarefa precisa de um nome válido!');
       return;
     }
     const newTask: TaskModel = {

@@ -5,9 +5,13 @@ import { Cycles } from '../Cycles';
 import { useRef } from 'react';
 import type { TaskModel } from '../../models/TaskModel';
 import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
+import { getNextCycle } from '../../utils/getNextCycle';
+import { getNextCycleType } from '../../utils/getNextCycleType';
 
 export function MainForm() {
   const { state, setState } = useTaskContext();
+  const nextCycle = getNextCycle(state.currentCycle);
+  const nextCycleType = getNextCycleType(nextCycle);
   const taskNameInput = useRef<HTMLInputElement>(null);
   function handleClickSubmitForm(event: React.FormEvent<HTMLFormElement>) {
     console.log(taskNameInput.current);
@@ -26,14 +30,20 @@ export function MainForm() {
       completeDate: null,
       interruptDate: null,
       duration: 1,
-      type: 'worktime',
+      type: 'workTime',
     };
+
+    const secondsRemaining = newTask.duration * 60;
     setState(prevState => {
       return {
         ...prevState,
         tasks: [...prevState.tasks, newTask],
         activeTask: newTask,
-        currentCycle: 1,
+        currentCycle: nextCycle,
+        type: nextCycleType,
+        secondsRemaining,
+        formattedSecondsRemaining: '00:00',
+        config: { ...prevState, ...prevState.config },
       };
     });
   }

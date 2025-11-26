@@ -4,7 +4,7 @@ export function Contador() {
   const { state } = useTaskContext();
   return (
     <div>
-      <div className={styles.container}>{state.formattedSecondsRemaining}</div>
+      <div className={styles.container}>{state.formatedSecondsRemaining}</div>
     </div>
   );
 }

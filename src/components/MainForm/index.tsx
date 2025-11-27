@@ -14,9 +14,8 @@ export function MainForm() {
   const nextCycle = getNextCycle(state.currentCycle);
   const nextCycleType = getNextCycleType(nextCycle);
   const taskNameInput = useRef<HTMLInputElement>(null);
+
   function handleClickSubmitForm(event: React.FormEvent<HTMLFormElement>) {
-    console.log(taskNameInput.current);
-    console.log(taskNameInput.current.value);
     event.preventDefault();
     if (!taskNameInput.current) return;
     const taskName = taskNameInput.current.value.trim();
@@ -31,22 +30,20 @@ export function MainForm() {
       completeDate: null,
       interruptDate: null,
       duration: state.config[nextCycleType],
-      type: 'workTime',
+      type: nextCycleType,
     };
 
     const secondsRemaining = newTask.duration * 60;
     const formatedSecondsRemaining =
       formatedSecondsRemainingToMinutes(secondsRemaining);
-    console.log(formatedSecondsRemaining);
     setState(prevState => {
       return {
         ...prevState,
         tasks: [...prevState.tasks, newTask],
         activeTask: newTask,
         currentCycle: nextCycle,
-        type: nextCycleType,
         formatedSecondsRemaining,
-        config: { ...prevState, ...prevState.config },
+        config: { ...prevState.config },
       };
     });
   }

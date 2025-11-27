@@ -19,7 +19,7 @@
 .workTime {
   background-color: var(--warning);
 }
-.breakTime {
+.shortBreakTime {
   background-color: var(--success);
 }
 .longBreakTime {

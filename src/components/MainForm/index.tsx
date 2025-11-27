@@ -57,6 +57,7 @@ export function MainForm() {
           placeholder='Digite o nome da task...'
           title='Input Text Title'
           ref={taskNameInput}
+          disabled={!!state.activeTask}
         />
       </div>
       <div className='formRow'>

@@ -42,8 +42,20 @@ export function MainForm() {
         tasks: [...prevState.tasks, newTask],
         activeTask: newTask,
         currentCycle: nextCycle,
+        secondsRemaining,
         formatedSecondsRemaining,
         config: { ...prevState.config },
+      };
+    });
+  }
+
+  function handleInterruptingTask() {
+    setState(prevState => {
+      return {
+        ...prevState,
+        activeTask: null,
+        secondsRemaining: 0,
+        formatedSecondsRemaining: '00:00',
       };
     });
   }
@@ -80,7 +92,8 @@ export function MainForm() {
             aria-label='Interromper tarefa atual.'
             title='Interromper tarefa atual.'
             color='red'
-            type='submit'
+            type='button'
+            onClick={handleInterruptingTask}
             icon={<StopCircleIcon />}
           />
         )}

@@ -50,14 +50,20 @@ export function MainForm() {
   }
 
   function handleInterruptingTask() {
+    const newTasks = state.tasks.filter(task => task !== state.activeTask);
+    const novaData = new Date().toLocaleString('pt-BR');
+    const updateTask = { ...state.activeTask, interruptDate: novaData };
+
     setState(prevState => {
       return {
         ...prevState,
+        tasks: [...newTasks, updateTask],
         activeTask: null,
         secondsRemaining: 0,
         formatedSecondsRemaining: '00:00',
       };
     });
+    console.log(state.tasks);
   }
   return (
     <form className='form' action='' onSubmit={handleClickSubmitForm}>
@@ -82,7 +88,7 @@ export function MainForm() {
         {!state.activeTask && (
           <DefaultButton
             aria-label='Iniciar tarefa atual.'
-            aria-title='Iniciar tarefa atual.'
+            title='Iniciar tarefa atual.'
             color='green'
             type='submit'
             key={'sendFormButton'}

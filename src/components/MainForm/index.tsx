@@ -50,14 +50,15 @@ export function MainForm() {
   }
 
   function handleInterruptingTask() {
-    const newTasks = state.tasks.filter(task => task !== state.activeTask);
-    const novaData = new Date().toLocaleString('pt-BR');
-    const updateTask = { ...state.activeTask, interruptDate: novaData };
-
     setState(prevState => {
       return {
         ...prevState,
-        tasks: [...newTasks, updateTask],
+        tasks: prevState.tasks.map(task => {
+          if (prevState.activeTask && prevState.activeTask.id === task.id) {
+            return { ...task, interruptDate: Date.now() };
+          }
+          return task;
+        }),
         activeTask: null,
         secondsRemaining: 0,
         formatedSecondsRemaining: '00:00',
